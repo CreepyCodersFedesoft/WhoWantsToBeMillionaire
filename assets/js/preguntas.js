@@ -3,6 +3,7 @@ let  pregunta = {
     opciones : [
         "verde",
         "amarillo",
+        "naranja",
         "azul"
     ],
     correcto: 2

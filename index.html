@@ -6,16 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
+    <title>Who wants to be a millionaire</title>
 </head>
 <body>
     <div class="container-fluid mt-4">
         <div class="row">
-            <div class="col-md-6 p-4 d-flex align-items-center flex-column">
+            <div class="col-md-2"></div>
+            <div class="col-md-4 p-4 d-flex align-items-center flex-column">
                 <h1 class="jumbotron text-center titulo">Who wants to be a millionaire</h1>
                 <img src="assets/images/logomillonario.png" width="40%">
             </div>
-            <div class="col-md-6 ">
+            <div class="col-md-4 ">
                 <div class="row puntuacionContainer py-3 m-4">
                     <div class="col-6 text-center">
                         <div class="col"><span class="numero">1</span>.<span class="puntuacion" id="puntuacion1"> 100 puntos</span></div>
@@ -35,50 +36,61 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-2"></div>
 
         </div>
 
         <div class="Preguntas">
-            <div class="row d-flex align-items-center">
-                <div class="col-md-1 linia"></div>
-                <div class="col-md-10 caja">
-                    <h2 class="text-center p-4 text-white" id="btnText">Aquí va la pregunta</h2>
+            <div class="row d-flex align-items-center my-2">
+                <div class="col-md-1 p-0 linia"></div>
+                <div class="col-md-10 p-0 caja">
+                    <div class="cajainside">
+                        <h2 class="text-center py-1 px-3 text-white" id="btnText">Aquí va la pregunta</h2>
+                    </div>
                 </div>
-                <div class="col-md-1 linia"></div>
+                <div class="col-md-1 p-0 linia"></div>
             </div>
             <div class="row d-flex align-items-center my-2">
-                <div class="col-md-1 linia"></div>
-                <div class="col-md-5 bg-primary p-0 answerContainer caja">
-                    <button class="w-100 h-100 text-white" id="btnA1">
-                        Respuesta 1
-                    </button>
+                <div class="col-md-1 p-0 linia"></div>
+                <div class="col-md-5 p-0 answerContainer caja">
+                    <div class="cajainside">
+                        <button class="w-100 h-100 text-white" id="btnA1">
+                            Respuesta 1
+                        </button>
+                    </div>
                 </div>
-                <div class="col-md-5 bg-dark p-0 answerContainer caja">
-                    <button class=" w-100 h-100 text-white" id="btnA2">
-                        Respuesta 2
-                    </button>                    
+                <div class="col-md-5 p-0 answerContainer caja">
+                    <div class="cajainside">
+                        <button class=" w-100 h-100 text-white" id="btnA2">
+                            Respuesta 2
+                        </button>                    
+                    </div>
                 </div>
-                <div class="col-md-1 linia"></div>
+                <div class="col-md-1 p-0 linia"></div>
             </div>
-            <div class="row d-flex align-items-center">
-                <div class="col-md-1 linia"></div>
-                <div class="col-md-5 p-0 bg-info answerContainer caja">
-                    <button class="w-100 h-100 text-white" id="btnA3">
-                        Respuesta 3
-                    </button>     
+            <div class="row d-flex align-items-center my-2">
+                <div class="col-md-1 p-0 linia"></div>
+                <div class="col-md-5 p-0 answerContainer caja">
+                    <div class="cajainside">
+                        <button class="w-100 h-100 text-white" id="btnA3">
+                            Respuesta 3
+                        </button>     
+                    </div>
                 </div>
-                <div class="col-md-5 p-0 bg-danger answerContainer caja">
-                    <button class="w-100 h-100 text-white" id="btnA4">
-                        Respuesta 4
-                    </button>                 
+                <div class="col-md-5 p-0 answerContainer caja">
+                    <div class="cajainside">
+                        <button class="w-100 h-100 text-white" id="btnA4">
+                            Respuesta 4
+                        </button>                 
+                    </div>
                 </div>
-                <div class="col-md-1 linia"></div>
+                <div class="col-md-1 p-0 linia"></div>
             </div>
             <div class="row d-flex align-items-center">
                 <div class="col-md-2 p-0">
                 </div>
-                <div class="col-md-8" >
-                    <p class="text-center" id="tiempo">60</p>
+                <div class="col-md-8 p-0" >
+                    <p class="text-center subirTiempo" id="tiempo">60</p>
                 </div>
                 <div class="col-md-2 p-0">
                     <button class="btn-dark" id="btnNext">

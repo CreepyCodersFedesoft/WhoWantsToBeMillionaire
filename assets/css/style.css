@@ -29,12 +29,24 @@ body{
 }
 
 .caja{
-    border: 10px solid rgb(224, 224, 224);
+    position: relative;
+    height: 100px;
+    background: rgb(224, 224, 224);
+    clip-path: polygon(10% 0, 90% 0, 100% 45%, 100% 55%, 90% 100%, 10% 100%, 0 55%, 0 45%);
+}
+.cajainside{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
     background: rgba(0,25,128,1);
+    clip-path: polygon(9% 0, 91% 0, 100% 45%, 100% 55%, 91% 100%, 9% 100%, 0 55%, 0 45%);
 }
 
 button{
     background: rgba(0,25,128,1);
+    border: none;
 }
 
 .linia{
@@ -46,10 +58,24 @@ button{
     font-size: 30px;
     color: rgb(174, 177, 0);
 }
-
+.subirTiempo{
+    position: relative;
+    top: -135px;
+}
  
 #btnNext {
     background: rgb(61, 41, 134);
     height: 100%;
     width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+    .subirTiempo {
+        top: 0px;
+    }
+    
+    .linia {
+        display: none !important;
+    }
+    
 }

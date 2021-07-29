@@ -27,6 +27,7 @@ const loadLevel = (level, points) =>{
     level = parseInt(level) - 1;
     console.log(level);
     console.log(preguntas[level]["opciones"][0]);
+    $btnText.innerHTML = preguntas[level]["titulo"];
     $btnA1.innerHTML = preguntas[level]["opciones"][0];
     $btnA2.innerHTML = preguntas[level]["opciones"][1];
     $btnA3.innerHTML = preguntas[level]["opciones"][2];
@@ -38,11 +39,11 @@ const nextLevel = () => {
     let level = parseInt(localStorage.getItem("level"));
     let poinst = localStorage.getItem("points");
     //validar si la pregunta esta bien
-
+    
     //cargamos siguiente nivel
     console.log(String(level+1));
     console.log((level+1).toString());
-    //level === preguntas.length ? alert(`felicidades, ganeste y tu puntaje fue ${poinst}`) : loadLevel((level+1), poinst);
+    level === preguntas.length ? alert(`felicidades, ganeste y tu puntaje fue ${poinst}`) : loadLevel((level+1), poinst);
 
 
 

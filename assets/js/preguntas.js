@@ -13,7 +13,7 @@ let preguntas = [
   },
   {
     titulo: "¿Qué etiqueta es usada para invocar un archivo JS en un HTML?",
-    opciones: ["<button>", "<a>", "<div>", "<script>"],
+    opciones: ["&lt;button&gt;", "&lt;a&gt;", "&lt;div&gt;", "&lt;script&gt;"],
     correcto: 3,
   },
   {

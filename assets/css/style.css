@@ -13,6 +13,7 @@ body{
 
 .puntuacionContainer{
     border: 5px solid #ffffff;
+    border-radius: 25px;
 }
 
 .numero{
@@ -26,9 +27,29 @@ body{
 .answerContainer {
     height: 100px;
 }
-/*
-.next {
-    height: 1vmax;
-    background: rgb(61, 41, 134);
+
+.caja{
+    border: 10px solid rgb(224, 224, 224);
+    background: rgba(0,25,128,1);
 }
-*7
+
+button{
+    background: rgba(0,25,128,1);
+}
+
+.linia{
+    height: 10px;
+    background-color: rgb(224, 224, 224);
+}
+
+#tiempo{
+    font-size: 30px;
+    color: rgb(174, 177, 0);
+}
+
+ 
+#btnNext {
+    background: rgb(61, 41, 134);
+    height: 100%;
+    width: 100%;
+}

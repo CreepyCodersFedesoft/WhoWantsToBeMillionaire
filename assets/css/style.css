@@ -1,0 +1,13 @@
+.container-fluid { 
+    background: white; 
+    min-height: 100vh; 
+}
+.answerContainer {
+    height: 130px;
+}
+/*
+.next {
+    height: 1vmax;
+    background: rgb(61, 41, 134);
+}
+*7

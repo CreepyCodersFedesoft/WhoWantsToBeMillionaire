@@ -13,6 +13,7 @@ body{
 
 .puntuacionContainer{
     border: 5px solid #ffffff;
+    border-radius: 25px;
 }
 
 .numero{

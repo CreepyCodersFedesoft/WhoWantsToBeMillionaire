@@ -1,9 +1,30 @@
-.container-fluid { 
-    background: white; 
-    min-height: 100vh; 
+body{
+    background: rgb(102,96,236);
+    background: radial-gradient(circle, rgba(102,96,236,1) 0%, rgba(0,25,128,1) 100%);
 }
+
+.container-fluid { 
+    width: 100%;
+}
+
+.titulo{    
+    color: rgb(174, 177, 0);
+}
+
+.puntuacionContainer{
+    border: 5px solid #ffffff;
+}
+
+.numero{
+    color: rgb(174, 177, 0);
+}
+
+.puntuacion{
+    color: rgb(156, 156, 156);
+}
+
 .answerContainer {
-    height: 130px;
+    height: 100px;
 }
 /*
 .next {

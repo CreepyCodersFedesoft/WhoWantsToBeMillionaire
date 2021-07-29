@@ -8,6 +8,7 @@ let $btnA3 = document.getElementById("btnA3");
 let $btnA4 = document.getElementById("btnA4");
 let currentLevel = 0;
 let asnwerRight = -1;
+let currentAsnwer = "";
 
 //cueando comience el nivel, debe seleccionarse el nivel en que quedo y la puntuacion
 //desde el local storage, y comenzar a correr el cronometro
@@ -38,34 +39,39 @@ const nextLevel = () => {
     let level = parseInt(localStorage.getItem("level"));
     let poinst = localStorage.getItem("points");
     //validar si la pregunta esta bien
-
+    
+    //let response = pregunta["correcto"]
+    //pregunta["opciones"][response]
+    
+    
     //cargamos siguiente nivel
-    console.log(String(level+1));
-    console.log((level+1).toString());
-    //level === preguntas.length ? alert(`felicidades, ganeste y tu puntaje fue ${poinst}`) : loadLevel((level+1), poinst);
-
-
-
+    level === preguntas.length ? alert(`felicidades, ganeste y tu puntaje fue ${poinst}`) : loadLevel(String(level+1), poinst);
 };
 
 const cleanStorage = () => {
     localStorage.clear();
 };
 
+const getTextButton = (text) => {
+    currentAsnwer = text;
+    console.log(`La respuesta seleccionada actualmente es ${currentAsnwer}`);
+};
+
+
 startLevel();
 
 
 $btnA1.onclick = function () {
-    
+    getTextButton($btnA1.innerText)
 };
 $btnA2.onclick = function () {
-    
+    getTextButton($btnA2.innerText)
 };
 $btnA3.onclick = function () {
-    
+    getTextButton($btnA3.innerText)
 };
 $btnA4.onclick = function () {
-    
+    getTextButton($btnA4.innerText)
 };
 $btnNext.onclick = function () {
     nextLevel();

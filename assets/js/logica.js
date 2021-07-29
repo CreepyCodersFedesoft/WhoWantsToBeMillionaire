@@ -13,25 +13,39 @@ let asnwerRight = -1;
 //desde el local storage, y comenzar a correr el cronometro
 const startLevel = () => {
     if(localStorage.getItem('level') && localStorage.getItem('level') !== "" && localStorage.getItem('points') && localStorage.getItem('points') !== ""){
-        //ya tiene una partida empezada
+        loadLevel(localStorage.getItem("level"), localStorage.getItem("points"));
     } else {
         //iniciando nueva partida
-        localStorage.setItem('level', '1');
-        localStorage.setItem('points', '0');
-        
-        //enviamos preguntas
-        console.log(preguntas[0]["opciones"][0]);
-        $btnA1.innerHTML = preguntas[0]["opciones"][0];
-        $btnA2.innerHTML = preguntas[0]["opciones"][1];
-        $btnA3.innerHTML = preguntas[0]["opciones"][2];
-        $btnA4.innerHTML = preguntas[0]["opciones"][3];
-        asnwerRight = preguntas[0]["correcto"];
-
+        loadLevel("1", "0");
     }
 }
-const loadLevel = () =>{
-
+const loadLevel = (level, points) =>{
+    localStorage.setItem('level', level);
+    localStorage.setItem('points', points);
     
+    //enviamos preguntas
+    level = parseInt(level) - 1;
+    console.log(level);
+    console.log(preguntas[level]["opciones"][0]);
+    $btnA1.innerHTML = preguntas[level]["opciones"][0];
+    $btnA2.innerHTML = preguntas[level]["opciones"][1];
+    $btnA3.innerHTML = preguntas[level]["opciones"][2];
+    $btnA4.innerHTML = preguntas[level]["opciones"][3];
+    asnwerRight = preguntas[level]["correcto"];
+};
+
+const nextLevel = () => {
+    let level = parseInt(localStorage.getItem("level"));
+    let poinst = localStorage.getItem("points");
+    //validar si la pregunta esta bien
+
+    //cargamos siguiente nivel
+    console.log(String(level+1));
+    console.log((level+1).toString());
+    //level === preguntas.length ? alert(`felicidades, ganeste y tu puntaje fue ${poinst}`) : loadLevel((level+1), poinst);
+
+
+
 };
 
 const cleanStorage = () => {
@@ -54,5 +68,5 @@ $btnA4.onclick = function () {
     
 };
 $btnNext.onclick = function () {
-    
+    nextLevel();
 };

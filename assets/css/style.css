@@ -44,6 +44,9 @@ body{
     clip-path: polygon(9% 0, 91% 0, 100% 45%, 100% 55%, 91% 100%, 9% 100%, 0 55%, 0 45%);
 }
 
+.btnAswer:hover {
+    background: rgb(21, 46, 146);
+}
 button{
     background: rgba(0,25,128,1);
     border: none;

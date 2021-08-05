@@ -14,7 +14,7 @@ let currentID = "";
 //cueando comience el nivel, debe seleccionarse el nivel en que quedo y la puntuacion
 //desde el local storage, y comenzar a correr el cronometro
 const startLevel = () => {
-    
+    takeOffWhiteColor();
     resetTime();
     if (
         localStorage.getItem("level") &&
@@ -56,7 +56,7 @@ const nextLevel = () => {
         );
         if (asnwerRight === currentAsnwer) {
             //sumamos puntos y cambiamos color del boton
-            poinst += 100;
+            poinst = poinst*1.2+1*2;
             document.getElementById(currentID).style.background = "#18C41D";
             //deshabilitamos el boton de next mientras se realiza la transición
             document.getElementById("btnNext").disabled=true;
@@ -72,14 +72,21 @@ const nextLevel = () => {
                     //vaciar la pregunta seleccionada
                     cleanAnswer();
 
-                    //cargamos el siguiente nivel
+                    //volvemos al color original del boton
                     document.getElementById(currentID).style.background = "#001980";
+                    //reseteamos el ID del boton actualmente seleccionado
                     currentID = "";
+                    //cargamos el siguiente nivel
                     level === preguntas.length
                         ? alert(`felicidades, ganaste y tu puntaje fue ${poinst}`)
                         : loadLevel(String(level + 1), poinst);
-                    document.getElementById("btnNext").disabled=false;
+                    //activamos nuevamente el boton de transición de niveles
+                        document.getElementById("btnNext").disabled=false;
+                    //pintamos la puntuación en la tabla
+                    paintWhitePoints(level);
+                    //reseteamos el tiempo principal
                     resetTime();
+                    //limpiamos el subtiempo de transición
                     clearInterval(g);
                 }
                 t--;
@@ -92,7 +99,6 @@ const nextLevel = () => {
                 console.log(t);
                 if (t === 0) {
                     document.getElementById(currentID).style.background = "#001980";
-                    //alert("Has perdido");
                     cleanStorage();
                     document.getElementById("btnNext").disabled=false;
                     startLevel();
@@ -105,6 +111,26 @@ const nextLevel = () => {
         alert("respuesta vacia");
     }
 };
+
+const paintWhitePoints = (lvl) =>{
+    let currentLevelPoints = "puntuacion"+lvl;
+    console.log(document.getElementById(currentLevelPoints));
+    document.getElementById(currentLevelPoints).style.color = "#FFFFFF";
+    document.getElementById(currentLevelPoints).innerHTML = " " + localStorage.getItem("points") + " millones";
+}
+
+const takeOffWhiteColor = () => {
+    poinstTeemp = 0;
+    let currentLevelPoints = "";
+    for (let i = 1; i < preguntas.length + 1; i++) {
+        currentLevelPoints = "puntuacion" + i;
+        console.log(currentLevelPoints);
+        document.getElementById(currentLevelPoints).style.color = "#9C9C9C";
+        document.getElementById(currentLevelPoints).innerHTML = " ?? millones";
+        //poinstTeemp = Math.round(poinstTeemp*1.2+1*2);
+        //document.getElementById(currentLevelPoints).innerHTML = " " + poinstTeemp + " millones";
+    }
+}
 
 const cleanStorage = () => {
     localStorage.clear();
@@ -123,8 +149,12 @@ const getTextButton = (index) => {
 };
 
 const sendID = (idGotIt) => {
-    currentID !== ""
-        ? (document.getElementById(currentID).style.background = "#001980"): console.log("no hay currentID");
+    if(currentID !== ""){
+        document.getElementById(currentID).style.background = "#001980";
+        //intento por arreglar el hover....
+        document.getElementById(currentID).classList.remove("btnAswer");
+        document.getElementById(currentID).classList.add("btnAswer");
+    }
         
     currentID = idGotIt.id;
     (document.getElementById(idGotIt.id).style.background = "#C3C32C")

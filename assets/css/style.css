@@ -21,6 +21,7 @@ body{
 }
 
 .puntuacion{
+    text-align: left;
     color: rgb(156, 156, 156);
 }
 
@@ -47,6 +48,9 @@ body{
 .btnAswer:hover {
     background: rgb(21, 46, 146);
 }
+.btnNext:hover {
+    background: rgb(73, 48, 165)
+}
 button{
     background: rgba(0,25,128,1);
     border: none;
@@ -65,8 +69,8 @@ button{
     position: relative;
     top: -135px;
 }
- 
-#btnNext {
+
+.btnNext {
     background: rgb(61, 41, 134);
     height: 100%;
     width: 100%;
